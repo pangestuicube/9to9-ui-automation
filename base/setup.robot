@@ -38,7 +38,7 @@ Setup WebDriver
 Setup Browser
     Maximize Browser Window
     Go to    ${URLWEB}
-    Execute JavaScript    document.body.style.zoom = "80%"
+    Execute JavaScript    document.body.style.zoom = "100%"
     Set selenium speed    0.3
 
 Setup WebDriver ExecutablePath
