@@ -1,0 +1,1 @@
+ProductItemCardName     = "//div[@tdata='product-list'][{}]//p[@tdata='product-name']"  #https://prnt.sc/-cLIKJga_CdI
