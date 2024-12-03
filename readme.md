@@ -7,7 +7,11 @@
 *Step by step install robot framework : https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installation-instructions
 
 *tools Version
+
     selenium==4.25.0
+    
     robotframework==7.0.1
+    
     robotframework-seleniumlibrary==6.5.0; sys_platform == "win32"
+    
     robotframework-seleniumlibrary==6.3.0; sys_platform == "darwin"
