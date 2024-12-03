@@ -40,7 +40,7 @@ TCCO1.Successful Checkout for Guest User Test with simple product
 TCCO2.Successful Checkout for Guest User Test with Configurable product
     cart_page.Emty Cart Item
     home_page.Search Product by Keyword in Searchbox    keyword=${ProductConfigurableNameForSearch}
-    product_list_page.Validate Search Product And Go To PDP    keyword=${ConfigurableOptionIndex}
+    product_list_page.Validate Search Product And Go To PDP    keyword=${ProductConfigurableNameForSearch}
     @{productName}    product_detail_page.Add To Cart
     base.Alert Success Validation
     cart_page.Go To Shopping Cart

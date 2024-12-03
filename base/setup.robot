@@ -107,6 +107,7 @@ End Test Case
         Click Element    locator=//li[contains(@class,'header-middle__dropdown-list')]//a
         Wait Until Keyword Succeeds    15    1    User Is Logout
     END
+    Delete All Cookies
     Go To    url=${URLWEB}
 
 Go To My Account Page
