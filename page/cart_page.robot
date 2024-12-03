@@ -7,13 +7,14 @@ Variables       ../resources/data/testdata.py
 Variables       ../resources/locator/cart_locator.py
 Variables    ../resources/locator/checkout_locator.py
 Resource        ../base/base.robot
+Resource    ../page/home_page.robot
 
 
 *** Keywords ***
 Go To Shopping Cart
-    Wait Until Element Is Enabled    locator=${viewCartButton}    timeout=${timeOutMedium}
+    Wait Until Element Is Enabled    locator=${viewCartButton}    timeout=${timeOutLong}
     Click Element    locator=${viewCartButton}
-    Wait Until Element Is Visible    locator=${cartCheckoutButton}    timeout=${timeOutLong}
+    Wait Until Keyword Succeeds    15    1    Is On Cart Page
 
 Get Product Name From Minicart
     Wait Until Element Is Visible    locator=${cartProductList}    timeout=${timeOutLong}
@@ -67,3 +68,20 @@ Click Checkout button
     Wait Until Element Is Not Visible
     ...    locator=${pageSkaleton}
     ...    timeout=${timeOutLong}
+
+Emty Cart Item
+    Go To Shopping Cart
+    Wait Until Element Is Not Visible    locator=${pageSkaleton}    timeout=${timeOutLong}
+    ${present}=    Run Keyword and Return Status    Wait Until Page Contains Element    ${removeCartItem}
+    WHILE    ${present}
+        Click Element    ${removeCartItem}
+        Wait Until Element Is Visible    locator=//div[@role='dialog']//div//button[2]    timeout=${timeOutMedium}
+        Click Element    locator=//div[@role='dialog']//div//button[2]
+        Wait Until Element Is Not Visible    ${pageSkaleton}
+        ${present}=    Run Keyword and Return Status    Wait Until Page Contains Element    ${removeCartItem}
+    END
+    home_page.Go To Homepage
+
+Is On Cart Page
+    ${pass}    Run Keyword And Return Status    Element Should Be Visible    ${cartCheckoutButton}    timeout=1
+    ${pass}    Run Keyword And Return Status    Element Should Be Visible    ${removeCartItem}    timeout=1

@@ -101,6 +101,8 @@ End Test Case
     Sleep    5
     ${isLogin}    Run Keyword And Return Status  Wait Until Element Is Enabled    locator=//li[contains(@class,'header-middle__dropdown-list')]//a    timeout=${timeOutLong}
     IF  ${isLogin}
+        Mouse Over      ${customerName}
+        Sleep    5
         Wait Until Element Is Enabled    locator=//li[contains(@class,'header-middle__dropdown-list')]//a    timeout=${timeOutLong}
         Click Element    locator=//li[contains(@class,'header-middle__dropdown-list')]//a
         Wait Until Keyword Succeeds    15    1    User Is Logout

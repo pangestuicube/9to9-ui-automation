@@ -35,3 +35,7 @@ Search Product result Validation
             Run Keyword And Continue On Failure    Search Product Not Match    ${keyword}    ${txtProductresult}
         END
     END
+
+Go To Homepage
+    Go To    url=${URLWEB}
+    Wait Until Element Is Not Visible    locator=${pageSkaleton}    timeout=${timeOutLong}
