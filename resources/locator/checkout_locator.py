@@ -19,7 +19,7 @@ addressDetailInput  ="//input[@id='addressForm-addressDetail-textField']"
 addressPinpoinCheckbox  ="//input[@id='addressForm-confirmPinPoint-checkbox']"
 addressDefaultCheckbox = "//input[@id='addressForm-addressDefault-checkbox']"
 addressSubmitButton ="//div[@id='formAddressInputContainer']//button[@type='submit']"
-closeAddressList	= "//div[@id='checkoutListAddress']/div/div/button" #https://prnt.sc/vIXry0dUS8TF
+closeAddressList	= "//div[@id='checkoutListAddress']//button[@tdata='button-back']" #https://prnt.sc/vIXry0dUS8TF
 
 # Thankyoupage
 GuestOrderNumber = "//b[@tdata='orderNumberLabel']"

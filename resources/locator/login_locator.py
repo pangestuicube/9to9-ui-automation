@@ -7,4 +7,4 @@ passwordInput	        = "//input[@id='Password']"
 submitLoginFormButton	= "//button[@tdata='submit-login-form-button']"
 
 # Dashboard Page
-dashboardPage   ="//h4" #Need To update
+dashboardPage   ="//h4[@tdata='dashboard-page']"
